@@ -1,0 +1,272 @@
+class Game
+{
+  
+  int currentPlayerTurn;
+  Board board;
+  List<Card> allCards;
+  Murderer murderer;
+  Map<Int,Player> playerMap;
+  
+  private void Setup(){
+    board = new Board();
+    
+    allCards = CreateCards() p //randomize and create cards
+    //distribute cards
+    murderer = EstablishMurderer(allCards) p // set one card of each type as murder
+    
+  }
+  private void MainLoop(){
+    //Display board state pre-input
+    DisplayBoard();
+    
+    //turn stuff
+    
+    //input
+    
+    //response
+    
+  }
+  
+  /*
+  	Creates and returns a list of all cards
+  */
+  private List<Card> CreateCards(){
+    
+  }
+  /*
+  	Picks a random card of each type to establish as 	the murderer
+  */
+  private Murderer EstablishMurderer(List<Card> cards)  {
+    
+  }
+  
+  
+  /*
+  	Gets and displays the board to the screen
+  */
+  private void DisplayBoard(){
+    
+  }
+  
+  
+  /*
+  	returns the card class of a card by its name
+  */
+  public Card getCardByName(String cardName){
+    
+  }
+  
+  class Murderer
+  {
+    //const
+    //Murderer(Card weapon, Card estate, Card person){
+    
+    // }
+    
+    private Card weapon;
+    private Card estate;
+    private Card person;
+    
+    /*
+    	Returns if the given cards are the murder ones
+    */
+    boolean checkMurderer(Card weapon, Card estate, Card person){
+      
+    }
+    
+    /*
+    	Formatted display output
+    */
+    String toString(Card weapon, Card estate, Card person){
+      
+    }
+    
+  }
+  
+  
+  1 -> * Board;
+  1 -> * Card;
+  1 -> * Player;
+}
+
+class Board
+{
+  //constructor creates board
+  
+  Cell[] cellData;
+  List<Estate> estateList;
+  
+  /*
+  	Formats the board into a string 
+  */
+  public String toString(){
+    
+  }
+  
+  
+  
+  1 -> * Cell;
+  1 -> * Estate;
+}
+
+class Estate{
+  List<Cell> estateCells;
+  Set<Person> playersInEstate;
+  Weapon weapon;
+  
+  /*
+    Adds a person to the players in the estate
+  */
+  void addPerson(Person person){
+    
+  }
+  
+  /*
+    Removes a person to the players in the estate
+  */
+  boolean removePerson(Person person){
+    
+  }
+  
+  /*
+    Sets Weapon
+  */
+  void setWeapon(Person person){
+    
+  }
+  
+  String toString(){
+    
+  }
+}
+
+class Card
+{
+  int cardType;
+  String cardName;
+  /*
+  	Returns if cards are equal
+  */
+  public bool equals(Card other){
+    
+  }
+}
+
+class Cell
+{
+  public String toString(){
+    
+  }
+  public default boolean isWalkable(){
+    return true;
+  }
+  public default boolean isEntrance(){q
+    return null;
+  }
+}
+
+class Inside
+{
+  isA Cell;
+  public String toString(){
+    
+  }
+  public boolean isWalkable(){
+    return false;
+  }
+}
+
+class Door
+{
+  isA Cell;
+  Estate estate;
+  
+  1 -> * Estate;
+  public String toString(){
+    
+  }
+  public Estate isEntrance(){
+    return estate;
+  }
+}
+
+class Person
+{
+  isA Cell;
+  public String toString(){
+    
+  }
+  public boolean isWalkable(){
+    return false;
+  }
+}
+
+class Player
+{
+  String name;
+  boolean hasGuessed;
+  List<Card> cards;
+  
+  
+}
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class Game
+{
+  position 50 30 109 45;
+  position.association Board__Game 13,109 30,0;
+  position.association Card__Game 172,41 0,1;
+  position.association Game__Player 264,125 0,10;
+}
+
+class Murderer
+{
+  position 620 298 318.047 95.3594;
+}
+
+class Board
+{
+  position 40 335 125.531 58.3594;
+  position.association Board__Cell 19,58 3,0;
+  position.association Board__Estate 158,3 0,9;
+  position.association Board__Player 20,0 0,10;
+}
+
+class Estate
+{
+  position 291 338 161.516 92.3594;
+}
+
+class Card
+{
+  position 371 12 165.562 112.359;
+}
+
+class Cell
+{
+  position 46 566 109 41.3594;
+}
+
+class Inside
+{
+  position 56 681 109 41.3594;
+}
+
+class Door
+{
+  position 260 687 174.141 112.359;
+  position.association Door__Estate 66,0 13,180;
+}
+
+class Person
+{
+  position 454 672 185.938 95.3594;
+}
+
+class Player
+{
+  position 687 115 167.875 95.3594;
+}
